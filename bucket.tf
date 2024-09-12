@@ -20,7 +20,7 @@ resource "google_storage_bucket_iam_binding" "binding" {
 # TODO: Create a data source for a GCS Bucket and use following bucket: hack-and-heat-2024-task-5
 # A data source allows Terraform to use information defined outside of Terraform, in this case our already exisiting bucket in the GCP project.
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/storage_bucket
-data "google_storage_bucket" "my-bucket" {
+data "google_storage_bucket" "manuel-bucket" {
   name = "my-manuel-bucket"
 }
 
