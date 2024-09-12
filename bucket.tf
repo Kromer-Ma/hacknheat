@@ -22,7 +22,6 @@ resource "google_storage_bucket_iam_binding" "binding" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/storage_bucket
 data "google_storage_bucket" "manuel-bucket" {
   name = "my-manuel-bucket"
-  bucket = "hack-and-heat-2024-task-5"
 }
 
 # TODO: Upload Readme.md to the bucket you fetched above with your data source. Use your name as a prefix for the storage bucket object resource.
@@ -30,5 +29,5 @@ data "google_storage_bucket" "manuel-bucket" {
 resource "google_storage_bucket_object" "picture" {
   name   = "butterfly01-manuel"
   source = "/images/nature/garden-tiger-moth.jpg"
-  bucket = "image-store"
+  bucket = "hack-and-heat-2024-task-5"
 }
