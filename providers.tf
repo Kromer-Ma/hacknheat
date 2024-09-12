@@ -1,4 +1,4 @@
 provider "google" {
     project = var.project_id
-    credentials = file("sa_key.json")
+#    credentials = file("sa_key.json")
 }
