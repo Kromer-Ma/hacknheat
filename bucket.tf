@@ -2,9 +2,20 @@
 
 # TODO: Create a google_storage_bucket 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket
+resource "google_storage_bucket" "my-bucket" {
+  name          = "manuel-bucket"
+  location      = "EU"
+}
 
 # TODO: Create an IAM binding with the role Storage Object User and yourself as the member
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_iam
+resource "google_storage_bucket_iam_binding" "binding" {
+  bucket = google_storage_bucket.my-bucket.name
+  role = "roles/storage.admin"
+  members = [
+    "user:manuel.kromer@senacor.com",
+  ]
+}
 
 # TODO: Create a data source for a GCS Bucket and use following bucket: hack-and-heat-2024-task-5
 # A data source allows Terraform to use information defined outside of Terraform, in this case our already exisiting bucket in the GCP project.
